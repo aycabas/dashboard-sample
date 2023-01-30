@@ -41,6 +41,15 @@ export const inputStyle = (focused?: boolean): CSSProperties => ({
   color: tokens.colorNeutralForeground1,
   backgroundColor: focused ? tokens.colorNeutralBackground6 : tokens.colorNeutralBackground3,
 });
+export const inputCodeStyle = (focused?: boolean): CSSProperties => ({
+  border: "none",
+  outline: "medium",
+  height: "1.75rem",
+  marginLeft: "-0.35rem",
+  fontSize: "0.875rem",
+  color: tokens.colorNeutralForeground1,
+  backgroundColor: focused ? tokens.colorNeutralBackground6 : tokens.colorNeutralBackground3,
+});
 
 export const addTaskContainer = (themeString: string, focused?: boolean): CSSProperties => {
   const border: CSSProperties = themeString === "contrast" ? borderStyle : {};
@@ -77,9 +86,18 @@ export const existingTaskLayout = (themeString: string): CSSProperties => {
     alignItems: "center",
     backgroundColor: tokens.colorNeutralBackground3,
     borderRadius: "4px",
-    height: "2.25rem",
+    height: "auto",
     paddingLeft: "0.875rem",
     paddingRight: "0.7rem",
     ...border,
   };
+};
+
+export const descriptionStyle: CSSProperties = {
+  fontWeight: "400",
+  fontSize: "0.75rem",
+  lineHeight: "1rem",
+  marginBottom: "1.125rem",
+  color: tokens.colorNeutralForeground3,
+  marginTop: "0.25rem",
 };

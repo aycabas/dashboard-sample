@@ -292,7 +292,7 @@ export class Chart extends Widget<IChartWidgetState> {
         iconPosition="after"
         size="small"
         style={footerBtnStyle}
-        onClick={() => {}} // navigate to detailed page
+        onClick={() => { }} // navigate to detailed page
       >
         View query
       </Button>
@@ -311,8 +311,8 @@ export class Chart extends Widget<IChartWidgetState> {
           r === DayRange.Seven
             ? chart1Points_7D
             : r === DayRange.Thirty
-            ? chart1Points_30D
-            : chart1Points_60D,
+              ? chart1Points_30D
+              : chart1Points_60D,
         color: "#6264A7",
       },
       {
@@ -321,8 +321,8 @@ export class Chart extends Widget<IChartWidgetState> {
           r === DayRange.Seven
             ? chart2Points_7D
             : r === DayRange.Thirty
-            ? chart2Points_30D
-            : chart2Points_60D,
+              ? chart2Points_30D
+              : chart2Points_60D,
         color: "#D9DBDB",
       },
     ];

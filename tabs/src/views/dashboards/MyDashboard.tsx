@@ -8,12 +8,17 @@ import { Dashboard } from "../lib/Dashboard";
 import { oneColumn } from "../lib/Dashboard.styles";
 import { imgStyle } from "../styles/MyDashboard.styles";
 import { Calendar } from "../widgets/Calendar";
+import { OpenAI } from "../widgets/openAI";
 import { Chart } from "../widgets/Chart";
 import { Collaboration } from "../widgets/Collaboration";
 import { Documents } from "../widgets/Document";
 import { Task } from "../widgets/Task";
+import { PlannerTask } from "../widgets/PlannerTask";
 import { Providers, ProviderState } from "@microsoft/mgt-element";
 import { TeamsFxProvider } from "@microsoft/mgt-teamsfx-provider";
+import { GithubIssues } from "../widgets/githubIssues";
+
+
 
 const scope = ["Files.Read", "Tasks.ReadWrite", "Calendars.Read"];
 
@@ -24,13 +29,14 @@ export default class MyDashboard extends Dashboard {
         {this.state.showLogin === false ? (
           <>
             <Image style={imgStyle} src="bg.png" />
+
             <Chart />
             <div style={oneColumn()}>
-              <Calendar />
-              <Task />
+              <PlannerTask />
+              <Documents />
             </div>
-            <Collaboration />
-            <Documents />
+            <OpenAI />
+            <GithubIssues />
           </>
         ) : (
           <div
@@ -61,12 +67,12 @@ export default class MyDashboard extends Dashboard {
   protected customiseDashboardStyle(): CSSProperties | undefined {
     return this.state.showLogin === false
       ? {
-          marginTop: "5%",
-        }
+        marginTop: "5%",
+      }
       : {
-          padding: 0,
-          marginTop: 0,
-        };
+        padding: 0,
+        marginTop: 0,
+      };
   }
 
   async initGraphToolkit() {

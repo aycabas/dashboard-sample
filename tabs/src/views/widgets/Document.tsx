@@ -51,7 +51,7 @@ export class Documents extends Widget<IDocumentState> {
   headerContent(): JSX.Element | undefined {
     return (
       <div style={{ ...headerStyleWithoutIcon, ...headerStyle }}>
-        <Text style={headerTextStyle}>Your documents</Text>
+        <Text style={headerTextStyle}>Team documents</Text>
         <Button icon={<MoreHorizontal32Regular />} appearance="transparent" />
       </div>
     );
